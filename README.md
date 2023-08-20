@@ -1,4 +1,8 @@
-# Ng16
+# Todo App
+
+<p align="center">
+  <img src="https://i.imgur.com/HXFTbLc.png" alt="todo-app" />
+</p>
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.2.0.
 

@@ -9,9 +9,11 @@
       Add
     </button>
   </form>
-  <ul>
-    <li *ngFor="let item of items; index as i">
-      {{ i + 1 }}. {{ item }}
+  <ul class="todo-list">
+    <li *ngFor="let item of items; index as i" class="todo-list-item">
+      <div class="todo-task">
+        <mat-checkbox color="primary"> {{ item | titlecase }} </mat-checkbox>
+      </div>
       <div class="buttons">
         <mat-icon class="edit" (click)="editItem(i)">edit</mat-icon>
         <mat-icon class="delete" (click)="deleteItem(i)">delete</mat-icon>

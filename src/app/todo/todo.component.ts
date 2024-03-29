@@ -1,8 +1,9 @@
 import { Component } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { FormGroup, ReactiveFormsModule } from '@angular/forms';
+import {CommonModule} from '@angular/common';
+import {FormGroup, FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { FormBuilder } from '@angular/forms';
 import { MatButtonModule } from '@angular/material/button';
+import {MatCheckboxModule} from '@angular/material/checkbox';
 import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatIconModule } from '@angular/material/icon';
@@ -13,17 +14,19 @@ import { MatIconModule } from '@angular/material/icon';
   imports: [
     CommonModule,
     MatButtonModule,
+    MatCheckboxModule,
     ReactiveFormsModule,
     MatFormFieldModule,
     MatInputModule,
     MatIconModule,
+    FormsModule,
   ],
   templateUrl: './todo.component.html',
   styleUrls: ['./todo.component.scss'],
 })
 export class TodoComponent {
   todoForm: FormGroup;
-  items: string[] = ['study', 'eat'];
+  items: string[] = ['study', 'eat', 'gym'];
 
   constructor(private fb: FormBuilder) {
     this.todoForm = this.fb.group({

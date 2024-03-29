@@ -12,38 +12,45 @@
 }
 
 h1 {
-  color: orangered;
   font-size: 2rem;
 }
 
 .todo-form {
   display: flex;
+  width: min(100%,500px);
+
   &-field {
     width: 434px;
+  }
+}
+
+.todo-list {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  width: min(100%, 500px);
+
+  &-item {
+    margin: 1rem 0;
+    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #FFFFFF;
+    border-left: solid 4px #3F51B5;
+  }
+
+  .mat-mdc-checkbox-checked {
+    text-decoration: line-through;
+    text-decoration-color: grey;
+    text-decoration-thickness: 0.1rem;
+    opacity: 0.5;
   }
 }
 
 .btn {
   height: 56px;
   width: 100px;
-}
-
-ul {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-  font-size: 1.2rem;
-}
-
-li {
-  width: 500px;
-  margin: 1rem 0;
-  padding: 15px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background-color: #fff;
-  border-left: solid 4px orange;
 }
 
 .buttons {

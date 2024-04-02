@@ -12,10 +12,19 @@
   <ul class="todo-list">
     <li *ngFor="let item of items; index as i" class="todo-list-item">
       <div class="todo-task">
-        <mat-checkbox color="primary"> {{ item | titlecase }} </mat-checkbox>
+        <mat-checkbox *ngIf="!item.isEditing" color="primary"> {{ item.task | titlecase }} </mat-checkbox>
+        <mat-form-field *ngIf="item.isEditing" subscriptSizing="dynamic">
+          <mat-label>Task</mat-label>
+          <input matInput #editInputField [(ngModel)]="item.task" (keydown.enter)="editItem(i)">
+        </mat-form-field>
       </div>
       <div class="buttons">
-        <mat-icon class="edit" (click)="editItem(i)">edit</mat-icon>
+        <div *ngIf="item.isEditing; else notInEditMode">
+          <mat-icon class="confirm" (click)="editItem(i)">check</mat-icon>
+        </div>
+        <ng-template #notInEditMode>
+          <mat-icon class="edit" (click)="editItem(i) ">edit</mat-icon>
+        </ng-template>
         <mat-icon class="delete" (click)="deleteItem(i)">delete</mat-icon>
       </div>
     </li>
